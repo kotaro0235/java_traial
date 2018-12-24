@@ -83,6 +83,16 @@ ul #menu {
 /*===============================================
 サブメニュー(左カラム)
 ================================================*/
+h2 {
+    width:160px; height:43px;                                              /*幅と高さ*/
+    padding:17px 0px 0px 0px;                                            /*パディング*/
+    font-size:16px;                                                   /*フォントサイズ*/
+    background-image:url("images/bg_h2.png");                                /*背景画像*/
+    background-repeat:no-repeat;                               /*背景画像を繰り返さない*/
+    background-color:#000033;/*背景色*/
+    color:#ffffff;                                                         /*文字色*/
+}
+
 div#submenu {
     width:260px;                                                            /*幅の指定*/
     margin:10px 10px 10px 25px;                                             /*位置調整*/
@@ -93,12 +103,54 @@ div#submenu ul li {
     list-style-type:none;                                     /*リストマーカー無しにする*/
 }
 
+div#submenu ul li a:before {
+    content:url("images/icon_submenu.png");                          /*アイコン画像を挿入*/
+    margin:0px 10px 0px 0px;                                                   /*マージン*/
+    vertical-align:text-top;                                            /*縦方向の表示位置*/
+}
+
+div#submenu ul li a {
+    display:block;                                       /*リンク部分をブロック表示にする*/
+    height:45px;                                                     /*高さを45pxにする*/
+    padding:15px 0px 0px 30px;                                             /*パディング*/
+    text-decoration:none;                                         /*リンクの下線をなくす*/
+    border-bottom:1px dotted gray;                 /*リンク領域の下部にボーダーを付ける*/
+    background-image:url("images/bg_submenu.png");           /*リンク領域に背景画像を付ける*/
+    background-repeat:no-repeat;                                /*背景画像を繰り返さない*/
+    color:#333333;                                                           /*文字色*/
+}
+
+div#submenu ul li a:hover {
+    text-decoration:underline;                         /*リンクにマウスが乗ったら下線を表示*/
+}
+
+div#submenu ul li:first-child a {
+    border-top:1px dotted gray;                           /*一番上のリンクの上線を表示*/
+}
+
 /*===============================================
 インフォメーション(右カラム)
 ================================================*/
 div#info {
     width:660px;                                                            /*幅の指定*/
     float:left;                                                  /*カラムを左寄せにする*/
+    padding:10px 20px 0px 0px;                                            /*パディング*/
+}
+
+h3 {
+    font-size:14px;                                                        /*文字サイズ*/
+    width:660px;                                                                /*横幅*/
+    padding:10px 0px 10px 20px;                                            /*パディング*/
+    background-color:#003399;                                               /*背景色*/
+    color:#ffffff;                                                          /*文字色*/
+    border-radius:3px;                                                      /*角丸にする*/
+    -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px; -ms-border-radius:3px; /*角丸にする（ベンダープレフィックス付きの指定*/
+}
+
+p {
+    width:660px;                                                            /*幅の指定*/
+    margin:10px;                                                            /*マージン*/
+    text-indent:1em;                                                    /*インデント幅*/
 }
 
 .infoimg_index {
