@@ -1,4 +1,4 @@
-package main.gameninfo;
+package main.gameninfo.play;
 
 public enum Phase {
 	

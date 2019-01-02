@@ -1,6 +1,9 @@
 package main.gameninfo;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+
 import main.gameninfo.card.Card;
 
 public class Deck {
@@ -10,21 +13,33 @@ public class Deck {
 	public Deck(boolean createDeck) {
 		if (createDeck) {
 			while (true) {
-				//TODO　カードの選択処理
 			}
 			
 			
 		} else {
-			//TODO 独自エラーの定義
 			if (deck == null) throw new Error();
 		}
 	}
+
+	public List<Card> drow() {
+		List<Card> newHand =  Arrays.asList(
+			deck.get(0),
+			deck.get(1),
+			deck.get(2),
+			deck.get(3),
+			deck.get(4));
+
+		deck.remove(newHand);
+		
+		return newHand;
+	}
 	
-//	private Card chooseCard() {
-//		
-//		Card choosenCard = new Card();
-//		
-//		return Card; 
-//	}
+	public void init() {
+		Collections.shuffle(deck);
+	}
+	
+	public Card drow(int index) {
+		return deck.get(index);
+	}
 	
 }

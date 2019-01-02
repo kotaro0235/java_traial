@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="magic_card_game_trial_element_Type_Status.Order"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="main.gameninfo.card.Card"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.sun.javafx.collections.MappingChange.Map"/>
     <fullyQualifiedTypeName name="main.gameninfo.Phase"/>
+    <fullyQualifiedTypeName name="main.gameninfo.Totem"/>
+    <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.Occurs"/>
+    <fullyQualifiedTypeName name="main.gameninfo.Fields"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="main.gameninfo.AfterOrBefore"/>
+    <fullyQualifiedTypeName name="main.gameninfo.field.Strategy"/>
+    <fullyQualifiedTypeName name="main.gameninfo.card.CardType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="main.gameninfo.play.Phase"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="main.gameninfo.card.Card"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="main.gameninfo.Player"/>
 </qualifiedTypeNameHistroy>
