@@ -2,23 +2,66 @@ package main.gameninfo.card;
 
 import main.gameninfo.Player;
 import main.gameninfo.field.Totem;
-import main.gameninfo.play.Phase;
 
 public abstract class Card {
 
 	public Player posessionPlayer;
+	
 	public String CARD_NAME = "";
+	
 	public CardType cardType;
-	public abstract Object doExecute();
-	public abstract boolean isPlayable(Phase phase);
-	public abstract boolean attacked(Card card);
-	public abstract boolean canAttacked(Player player);
-	public abstract Totem summon(Totem totem);
 	
 	public int ATTACK;
+	
 	public int DEFENCE;
+	
 	public int COST;
+	
 	public String EFFECT;
+	
+	public boolean canExcecute() {
+		return false;
+	}
+	
+	public boolean doExecute() {
+		return false;
+	}
+	
+	public boolean doExecute(Card card) {
+		return false;
+	}
+	
+	//TODO 使わなかったら消しといて
+	public boolean doExecute(Player player) {
+		return false;
+	}
+
+	/**
+	 * 攻撃された場合の挙動
+	 * @param card 攻撃してきたカード
+	 * @return　攻撃の成否
+	 */
+	public boolean attacked(Card card) {
+		if (this.cardType == CardType.SOLDIER) {
+			this.DEFENCE = this.DEFENCE - card.ATTACK;
+			if (this.canExcecute()) {
+				return doExecute();
+			}
+			
+			if (this.DEFENCE < 0) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} else if (this.cardType == CardType.TRAP) {
+			return this.doExecute(card);
+			
+		} else {
+			return false;
+		}
+	}
+
 	
 	public Card(Player player, String cardName) {
 		posessionPlayer = player;

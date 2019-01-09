@@ -1,5 +1,6 @@
 package main.gameninfo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -10,28 +11,11 @@ public class Deck {
 
 	public List<Card> deck;
 	
-	public Deck(boolean createDeck) {
-		if (createDeck) {
-			while (true) {
-			}
-			
-			
-		} else {
-			if (deck == null) throw new Error();
-		}
-	}
-
-	public List<Card> drow() {
-		List<Card> newHand =  Arrays.asList(
-			deck.get(0),
-			deck.get(1),
-			deck.get(2),
-			deck.get(3),
-			deck.get(4));
-
-		deck.remove(newHand);
-		
-		return newHand;
+	private final int limitDeckSize = 40;
+	private final int offsetDeckSize = 20;
+	
+	public Deck() {
+		this.deck = new ArrayList<>();
 	}
 	
 	public void init() {
@@ -40,6 +24,19 @@ public class Deck {
 	
 	public Card drow(int index) {
 		return deck.get(index);
+	}
+	
+	public Card drop(int index) {
+		return deck.remove(index);
+	}
+	
+	public boolean construct(Card... cards) {
+		int argsSize = cards.length;
+		if (offsetDeckSize <= argsSize && limitDeckSize >= argsSize) {
+			this.deck = Arrays.asList(cards);
+			return true;
+		}
+		return false;
 	}
 	
 }

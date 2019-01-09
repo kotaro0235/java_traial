@@ -2,17 +2,23 @@ package main.gameninfo.field;
 
 import main.gameninfo.Player;
 import main.gameninfo.card.Card;
+import main.gameninfo.card.CardType;
 
+/**
+ * TotemはFieldによって初期化される
+ * Fieldの所有物
+ * 
+ * @author damay
+ *
+ */
 public class Totem {
 
 	public Player occupyedPlayer;
+
 	public Card occupyedCard;
 	
-	public Totem() {
-		
-	}
-	
-	public boolean canOccupyTotem() {
+	//TODO あとでCard側で使わなかったら、privateにする
+	public boolean canOccupyMe() {
 		if (occupyedPlayer == null && occupyedCard == null) {
 			return true;
 		} else {
@@ -20,25 +26,49 @@ public class Totem {
 		}
 	}
 	
-	public Totem occupyTotem(Player player, Card card) {
-		
-		if (occupyedPlayer == null && occupyedCard == null) {
+	//Trapセット状態は相手から見て攻撃可能なので、その状態の判断←今更ながらルールブック(仕様書)がないのであいまいだな
+	//TODO やりたいことはTrapがあっても攻撃できることを判断する、なのでMethod名がいけていない
+	//TODO あとでCard側で使わなかったらprivateにする
+	public boolean canAttackMe() {
+		if (occupyedPlayer == null) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean occupyMe(Player player, Card card) {
+		if (canOccupyMe()) {
 			occupyedPlayer = player;
 			occupyedCard = card;
-		} else {
-			if(occupyedCard.attacked(player, card)) {
-				occupyedPlayer = player;
-				occupyedCard = card;
-			}
+			return true;
 		}
-		return this;
+		return false;
 	}
 	
-	public Totem unOccupy() {
+	public void unOccupy() {
 		occupyedPlayer = null;
 		occupyedCard = null;
-		return this;
 	}
 	
+
+	public void setTrap(Card card) {
+		if (canOccupyMe() && card.cardType == CardType.TRAP) {
+			occupyedCard = card;
+		}
+	}
+	
+	private void attackMe(Player player, Card card) {
+		if(occupyedCard.attacked(card)) {
+			occupyMe(player, card);
+		}
+	}
+
+	public void attacked(Player player, Card card) {
+		if (occupyMe(player, card)) {
+		} else if(canAttackMe()) {
+			attackMe(player, card);
+		}
+		
+	}
 	
 }
