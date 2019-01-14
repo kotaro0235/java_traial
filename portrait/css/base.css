@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*=====================================
+    全体的なスタイル
+======================================*/
+* {
+    margin:0; padding:0;
+}
+
+body {
+    background-color:#cccccc;
+    font-size:95%;
+    font-family:"MS ゴシック",sans-serif;
+    line-height:1.5;
+}
+
+/*=====================================
+    ヘッダー
+======================================*/
+div#header {
+    background-color:black;
+    text-align:center;
+    height:75px;
+}
+
+/*=====================================
+    メニュー
+======================================*/
+#menu ul {
+    background-color:gray;
+}
+
+#menu li {
+    list-style-type:none;
+    display:inline;
+}
+
+#menu li a {
+    background-color:gray;
+    color:black;
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background-image:url(../img/button_standard.png)
+}
+
+#menu li a:hover {
+    background-image:url(../img/button_standard_hover.png)
+}
+
+#menu:after {
+    content:"";
+    display:block;
+    clear:both;
+}
