@@ -33,23 +33,70 @@ div#header {
 #menu li {
     list-style-type:none;
     display:inline;
+    float:left;
+    width:33.33%;
 }
 
 #menu li a {
-    background-color:gray;
-    color:black;
+    background-color:dimgray;
+    color:linen;
     display:block;
     text-align:center;
     text-decoration:none;
-    background-image:url(../img/button_standard.png)
+    font-size:120%;
+    padding:5px 5px 5px 5px;
 }
 
 #menu li a:hover {
-    background-image:url(../img/button_standard_hover.png)
+    background-color:gray;
 }
 
 #menu:after {
     content:"";
     display:block;
-    clear:both;
+    clear:both; 
 }
+
+/*=====================================
+    メインコンテンツ
+======================================*/
+/*commont*/
+#maincontents h3 {
+    font-family:'游ゴシック';
+    font-size:150%;
+    text-align:left;
+    padding:5px;
+}
+
+#maincontents ul {
+    font-family:'Haettenschweiler';
+    font-size:100%;
+}
+
+#maincontents ul li {
+    font-size:105%;
+    list-style-type:none; 
+    padding:5px 5px 5px 15px;
+}
+
+#maincontents article {
+    padding:5px 5px 5px 20px;
+    font-size:
+}
+
+#maincontents table {
+    padding:0px 0px 10px 10px;
+}
+
+#maincontents table th {
+    font-family:'arial black';
+    width:50%;
+    text-align:left;
+    padding:3px;
+}
+
+#maincontents table td {
+    font-family:'Century Gothic';
+}
+
+
