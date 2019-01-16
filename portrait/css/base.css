@@ -81,22 +81,36 @@ div#header {
 
 #maincontents article {
     padding:5px 5px 5px 20px;
-    font-size:
 }
 
 #maincontents table {
+    width:60%;
     padding:0px 0px 10px 10px;
-}
+}   
 
 #maincontents table th {
+    padding:5px 5px 5px 5px;
     font-family:'arial black';
-    width:50%;
+    width:10%;
     text-align:left;
     padding:3px;
 }
 
+#maincontents table th.skilllistth {
+    border-left:1px black solid;
+    border-bottom:1px black solid;
+    vertical-align: top;
+}
+
+#maincontents table th.skilllistth {
+    border-left:1px black solid;
+    border-bottom:1px black solid;
+}
+
 #maincontents table td {
+    width:90%;
     font-family:'Century Gothic';
+    column-span: 3;
 }
 
 
